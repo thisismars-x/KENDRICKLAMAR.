@@ -45,6 +45,7 @@
 // 3. begin() is the game precursor 
 // 4. game loops 
 // 5. on character health = 0, the program calls end() which later calls clear_screen() then abort().
+// Note that end() function guarantees the program ends but does not necessarily free all resources
 
 // ENJOY PLAYING!
 
