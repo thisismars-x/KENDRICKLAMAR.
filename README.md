@@ -1,6 +1,6 @@
-# Kendrick vs Drake Game
+# KENDRICK.
 
-Welcome to **Kendrick vs Drake**, an exciting game where you choose your favorite artist and compete in various challenges to prove who's the best! 
+Welcome to **KENDRICK.**, where you battle with your friend, and kill drake(or, kendrick).
 
 ## Table of Contents
 
@@ -16,13 +16,12 @@ Welcome to **Kendrick vs Drake**, an exciting game where you choose your favorit
 
 ## Introduction
 
-**Kendrick vs Drake** is a fan-based game where players select either Kendrick Lamar or Drake and participate in different game modes and challenges. The goal is to earn the highest score and prove your chosen artist is superior.
+**KENDRICK.** is a fan-based game where players select either Kendrick Lamar or Drake and engage in battle. The goal is to default the other character to prove who the real GOAT is.
 
 ## Features
 
 - Choose between Kendrick Lamar and Drake
-- Multiple game modes and challenges
-- Leaderboards to track high scores
+- Dynamic real time score records
 - Interactive and engaging gameplay
 - High-quality graphics and sound effects
 
@@ -45,21 +44,23 @@ To install and run the game locally, follow these steps:
 3. Install the necessary dependencies:
 
    ```sh
-   # If using npm
-   npm install
+   # For windows
+   git clone https://github.com/Microsoft/vcpkg.git
+   cd vcpkg
+   ./bootstrap-vcpkg.bat
 
-   # If using yarn
-   yarn install
+
+   # On Linux
+   sudo apt update
+   sudo apt install libsdl2-dev libsdl2-mixer-dev libsdl2-ttf-dev libsdl2-image-dev
+
    ```
 
 4. Start the game:
 
    ```sh
-   # If using npm
-   npm start
-
-   # If using yarn
-   yarn start
+   g++ finals.cpp -Isrc/Include -Lsrc/lib -o main -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer
+   ./main
    ```
 
 ## Usage
@@ -67,16 +68,14 @@ To install and run the game locally, follow these steps:
 After starting the game, you can:
 
 1. Choose your favorite artist: Kendrick Lamar or Drake.
-2. Select a game mode or challenge.
-3. Play the game and aim for the highest score.
-4. Check your standings on the leaderboard.
+2. Play the game and defeat your opponent.
+3. Enjoy the game divisions(entry and exit).
 
 ## Game Rules
 
 - Select your artist.
-- Participate in various challenges.
-- Each challenge has its own rules and scoring system.
-- Try to get the highest score to top the leaderboard.
+- Use [wasd] to control kendrick and [UP,LEFT,DOWN,RIGHT] to control drake.
+- Defeat your opponent
 
 ## Screenshots
 
@@ -116,7 +115,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions or feedback, feel free to reach out:
 
 - GitHub: [thisismars-x](https://github.com/thisismars-x)
-- Email: [your-email@example.com](mailto:your-email@example.com)
+- Email: [avikc.copy@gmail.com](mailto:avikc.copy@gmail.com)
 
 ---
 
