@@ -1,6 +1,6 @@
 # KENDRICK.
 
-Welcome to **KENDRICK.**, where you battle with your friend, and kill drake(or, kendrick).
+Welcome to **KENDRICK.**, where you battle with your friend, and kill Drake (or Kendrick).
 
 ## Table of Contents
 
@@ -16,12 +16,12 @@ Welcome to **KENDRICK.**, where you battle with your friend, and kill drake(or, 
 
 ## Introduction
 
-**KENDRICK.** is a fan-based game where players select either Kendrick Lamar or Drake and engage in battle. The goal is to default the other character to prove who the real GOAT is.
+**KENDRICK.** is a fan-based game where players select either Kendrick Lamar or Drake and engage in battle. The goal is to defeat the other character to prove who the real GOAT is.
 
 ## Features
 
 - Choose between Kendrick Lamar and Drake
-- Dynamic real time score records
+- Dynamic real-time score records
 - Interactive and engaging gameplay
 - High-quality graphics and sound effects
 
@@ -44,16 +44,14 @@ To install and run the game locally, follow these steps:
 3. Install the necessary dependencies:
 
    ```sh
-   # For windows
+   # For Windows
    git clone https://github.com/Microsoft/vcpkg.git
    cd vcpkg
    ./bootstrap-vcpkg.bat
 
-
    # On Linux
    sudo apt update
    sudo apt install libsdl2-dev libsdl2-mixer-dev libsdl2-ttf-dev libsdl2-image-dev
-
    ```
 
 4. Start the game:
@@ -69,13 +67,13 @@ After starting the game, you can:
 
 1. Choose your favorite artist: Kendrick Lamar or Drake.
 2. Play the game and defeat your opponent.
-3. Enjoy the game divisions(entry and exit).
+3. Enjoy the game divisions (entry and exit).
 
 ## Game Rules
 
 - Select your artist.
-- Use [wasd] to control kendrick and [UP,LEFT,DOWN,RIGHT] to control drake.
-- Defeat your opponent
+- Use [WASD] to control Kendrick and [UP, LEFT, DOWN, RIGHT] to control Drake.
+- Defeat your opponent.
 
 ## Screenshots
 
@@ -116,6 +114,11 @@ If you have any questions or feedback, feel free to reach out:
 
 - GitHub: [thisismars-x](https://github.com/thisismars-x)
 - Email: [avikc.copy@gmail.com](mailto:avikc.copy@gmail.com)
+
+## Contributors
+
+- [Nidan Poudel](https://github.com/NidanPoudel)
+- [Ayush Prajapati](https://github.com/prajadai)
 
 ---
 
