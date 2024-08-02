@@ -77,7 +77,8 @@ After starting the game, you can:
 
 ## Screenshots
 
-_Add screenshots of your game here to give users a visual understanding of the gameplay._
+### In-Game Battle
+![In-Game Battle](game.png)
 
 ## Contributing
 
