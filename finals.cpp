@@ -20,11 +20,11 @@
 
 // To resolve any dependency
 // Install SDL 2.0 follow "https://wiki.libsdl.org/SDL2/Installation"
-// Locate output exe wherever SDL2.dll, SDL2_image.dll, SDL2_mixer.dll are 
+// Locate output exe wherever SDL2.dll, SDL2_image.dll, SDL2_mixer.dll are
 
 // GAME CONTROLS
 
-// KENDRICK GAMEPLAY        
+// KENDRICK GAMEPLAY
 // w- jump
 // s- hit
 // a- left
@@ -42,27 +42,26 @@
 
 // 1. All screen parameters are null initialized
 // 2. load_assets() generates assets for screen
-// 3. begin() is the game precursor 
-// 4. game loops 
+// 3. begin() is the game precursor
+// 4. game loops
 // 5. on character health = 0, the program calls end() which later calls clear_screen() then abort().
 // Note that end() function guarantees the program ends but does not necessarily free all resources
 
 // ENJOY PLAYING!
 
-
-#include<SDL.h>
-#include<SDL_mixer.h>
-#include<SDL_image.h>
-#include<iostream>
-#include<cstdlib>
-#include<vector>
-#include<string>
+#include <SDL.h>
+#include <SDL_mixer.h>
+#include <SDL_image.h>
+#include <iostream>
+#include <cstdlib>
+#include <vector>
+#include <string>
 
 #undef main
 
 // SCREEN ESSENTIALS
-SDL_Window* window = nullptr;
-SDL_Renderer* renderer = nullptr;
+SDL_Window *window = nullptr;
+SDL_Renderer *renderer = nullptr;
 const Uint32 frame_delay = 500;
 
 // ASSET ADRESSES
@@ -172,113 +171,113 @@ const char kd66[] = "assets/exit/ending/outroo66.png";
 const char kd67[] = "assets/exit/ending/outroo67.png";
 
 // EXIT TEXTURES
-SDL_Texture* bbl_drizzy_killed = nullptr;
-SDL_Texture* dot_killed = nullptr;
-SDL_Texture* dot_final = nullptr;
-SDL_Texture* ghost0 = nullptr;
-SDL_Texture* ghost1 = nullptr;
-SDL_Texture* ghost2 = nullptr;
-SDL_Texture* ghost3 = nullptr;
-SDL_Texture* kdd1 = nullptr;
-SDL_Texture* kdd2 = nullptr;
-SDL_Texture* kdd3 = nullptr;
-SDL_Texture* kdd4 = nullptr;
-SDL_Texture* kdd5 = nullptr;
-SDL_Texture* kdd6 = nullptr;
-SDL_Texture* kdd7 = nullptr;
-SDL_Texture* kdd8 = nullptr;
-SDL_Texture* kdd9 = nullptr;
-SDL_Texture* kdd10 = nullptr;
-SDL_Texture* kdd11 = nullptr;
-SDL_Texture* kdd12 = nullptr;
-SDL_Texture* kdd13 = nullptr;
-SDL_Texture* kdd14 = nullptr;
-SDL_Texture* kdd15 = nullptr;
-SDL_Texture* kdd16 = nullptr;
-SDL_Texture* kdd17 = nullptr;
-SDL_Texture* kdd18 = nullptr;
-SDL_Texture* kdd19 = nullptr;
-SDL_Texture* kdd20 = nullptr;
-SDL_Texture* kdd21 = nullptr;
-SDL_Texture* kdd22 = nullptr;
-SDL_Texture* kdd23 = nullptr;
-SDL_Texture* kdd24 = nullptr;
-SDL_Texture* kdd25 = nullptr;
-SDL_Texture* kdd26 = nullptr;
-SDL_Texture* kdd27 = nullptr;
-SDL_Texture* kdd28 = nullptr;
-SDL_Texture* kdd29 = nullptr;
-SDL_Texture* kdd30 = nullptr;
-SDL_Texture* kdd31 = nullptr;
-SDL_Texture* kdd32 = nullptr;
-SDL_Texture* kdd33 = nullptr;
-SDL_Texture* kdd34 = nullptr;
-SDL_Texture* kdd35 = nullptr;
-SDL_Texture* kdd36 = nullptr;
-SDL_Texture* kdd37 = nullptr;
-SDL_Texture* kdd38 = nullptr;
-SDL_Texture* kdd39 = nullptr;
-SDL_Texture* kdd40 = nullptr;
-SDL_Texture* kdd41 = nullptr;
-SDL_Texture* kdd42 = nullptr;
-SDL_Texture* kdd43 = nullptr;
-SDL_Texture* kdd44 = nullptr;
-SDL_Texture* kdd45 = nullptr;
-SDL_Texture* kdd46 = nullptr;
-SDL_Texture* kdd47 = nullptr;
-SDL_Texture* kdd48 = nullptr;
-SDL_Texture* kdd49 = nullptr;
-SDL_Texture* kdd50 = nullptr;
-SDL_Texture* kdd51 = nullptr;
-SDL_Texture* kdd52 = nullptr;
-SDL_Texture* kdd53 = nullptr;
-SDL_Texture* kdd54 = nullptr;
-SDL_Texture* kdd55 = nullptr;
-SDL_Texture* kdd56 = nullptr;
-SDL_Texture* kdd57 = nullptr;
-SDL_Texture* kdd58 = nullptr;
-SDL_Texture* kdd59 = nullptr;
-SDL_Texture* kdd60 = nullptr;
-SDL_Texture* kdd61 = nullptr;
-SDL_Texture* kdd62 = nullptr;
-SDL_Texture* kdd63 = nullptr;
-SDL_Texture* kdd64 = nullptr;
-SDL_Texture* kdd65 = nullptr;
-SDL_Texture* kdd66 = nullptr;
-SDL_Texture* kdd67 = nullptr;
+SDL_Texture *bbl_drizzy_killed = nullptr;
+SDL_Texture *dot_killed = nullptr;
+SDL_Texture *dot_final = nullptr;
+SDL_Texture *ghost0 = nullptr;
+SDL_Texture *ghost1 = nullptr;
+SDL_Texture *ghost2 = nullptr;
+SDL_Texture *ghost3 = nullptr;
+SDL_Texture *kdd1 = nullptr;
+SDL_Texture *kdd2 = nullptr;
+SDL_Texture *kdd3 = nullptr;
+SDL_Texture *kdd4 = nullptr;
+SDL_Texture *kdd5 = nullptr;
+SDL_Texture *kdd6 = nullptr;
+SDL_Texture *kdd7 = nullptr;
+SDL_Texture *kdd8 = nullptr;
+SDL_Texture *kdd9 = nullptr;
+SDL_Texture *kdd10 = nullptr;
+SDL_Texture *kdd11 = nullptr;
+SDL_Texture *kdd12 = nullptr;
+SDL_Texture *kdd13 = nullptr;
+SDL_Texture *kdd14 = nullptr;
+SDL_Texture *kdd15 = nullptr;
+SDL_Texture *kdd16 = nullptr;
+SDL_Texture *kdd17 = nullptr;
+SDL_Texture *kdd18 = nullptr;
+SDL_Texture *kdd19 = nullptr;
+SDL_Texture *kdd20 = nullptr;
+SDL_Texture *kdd21 = nullptr;
+SDL_Texture *kdd22 = nullptr;
+SDL_Texture *kdd23 = nullptr;
+SDL_Texture *kdd24 = nullptr;
+SDL_Texture *kdd25 = nullptr;
+SDL_Texture *kdd26 = nullptr;
+SDL_Texture *kdd27 = nullptr;
+SDL_Texture *kdd28 = nullptr;
+SDL_Texture *kdd29 = nullptr;
+SDL_Texture *kdd30 = nullptr;
+SDL_Texture *kdd31 = nullptr;
+SDL_Texture *kdd32 = nullptr;
+SDL_Texture *kdd33 = nullptr;
+SDL_Texture *kdd34 = nullptr;
+SDL_Texture *kdd35 = nullptr;
+SDL_Texture *kdd36 = nullptr;
+SDL_Texture *kdd37 = nullptr;
+SDL_Texture *kdd38 = nullptr;
+SDL_Texture *kdd39 = nullptr;
+SDL_Texture *kdd40 = nullptr;
+SDL_Texture *kdd41 = nullptr;
+SDL_Texture *kdd42 = nullptr;
+SDL_Texture *kdd43 = nullptr;
+SDL_Texture *kdd44 = nullptr;
+SDL_Texture *kdd45 = nullptr;
+SDL_Texture *kdd46 = nullptr;
+SDL_Texture *kdd47 = nullptr;
+SDL_Texture *kdd48 = nullptr;
+SDL_Texture *kdd49 = nullptr;
+SDL_Texture *kdd50 = nullptr;
+SDL_Texture *kdd51 = nullptr;
+SDL_Texture *kdd52 = nullptr;
+SDL_Texture *kdd53 = nullptr;
+SDL_Texture *kdd54 = nullptr;
+SDL_Texture *kdd55 = nullptr;
+SDL_Texture *kdd56 = nullptr;
+SDL_Texture *kdd57 = nullptr;
+SDL_Texture *kdd58 = nullptr;
+SDL_Texture *kdd59 = nullptr;
+SDL_Texture *kdd60 = nullptr;
+SDL_Texture *kdd61 = nullptr;
+SDL_Texture *kdd62 = nullptr;
+SDL_Texture *kdd63 = nullptr;
+SDL_Texture *kdd64 = nullptr;
+SDL_Texture *kdd65 = nullptr;
+SDL_Texture *kdd66 = nullptr;
+SDL_Texture *kdd67 = nullptr;
 
-
-//START PROGRAM ADRESSES
-SDL_Texture* blank_screen = nullptr;
-SDL_Texture* kendrick__logo = nullptr;
-SDL_Texture* load = nullptr;
-SDL_Texture* like_us = nullptr;
-SDL_Texture* clock0 = nullptr;
-SDL_Texture* clock1 = nullptr;
-SDL_Texture* clock2 = nullptr;
-SDL_Texture* owl0 = nullptr;
-SDL_Texture* owl1 = nullptr;
-SDL_Texture* owl2 = nullptr;
-SDL_Texture* owl3 = nullptr;
-SDL_Texture* owl4 = nullptr;
-SDL_Texture* owl5 = nullptr;
-SDL_Texture* piano1 = nullptr;
-SDL_Texture* piano2 = nullptr;
-SDL_Texture* war_ = nullptr;
+// START PROGRAM ADRESSES
+SDL_Texture *blank_screen = nullptr;
+SDL_Texture *kendrick__logo = nullptr;
+SDL_Texture *load = nullptr;
+SDL_Texture *like_us = nullptr;
+SDL_Texture *clock0 = nullptr;
+SDL_Texture *clock1 = nullptr;
+SDL_Texture *clock2 = nullptr;
+SDL_Texture *owl0 = nullptr;
+SDL_Texture *owl1 = nullptr;
+SDL_Texture *owl2 = nullptr;
+SDL_Texture *owl3 = nullptr;
+SDL_Texture *owl4 = nullptr;
+SDL_Texture *owl5 = nullptr;
+SDL_Texture *piano1 = nullptr;
+SDL_Texture *piano2 = nullptr;
+SDL_Texture *war_ = nullptr;
 
 // ASSET INITIALIZATION
 void load_assets();
-SDL_Texture* drake_1 = nullptr;
-SDL_Texture* drake_2 = nullptr;
-SDL_Texture* kendrick_1 = nullptr;
-SDL_Texture* kendrick_2 = nullptr;
-SDL_Texture* kendrick_hit = nullptr;
-SDL_Texture* drake_hit = nullptr;
-SDL_Texture* background = nullptr;
-SDL_Texture* empty = nullptr;
-SDL_Texture* msg_ = nullptr;
+void checkEnds(int *);
+SDL_Texture *drake_1 = nullptr;
+SDL_Texture *drake_2 = nullptr;
+SDL_Texture *kendrick_1 = nullptr;
+SDL_Texture *kendrick_2 = nullptr;
+SDL_Texture *kendrick_hit = nullptr;
+SDL_Texture *drake_hit = nullptr;
+SDL_Texture *background = nullptr;
+SDL_Texture *empty = nullptr;
+SDL_Texture *msg_ = nullptr;
 
-//SOUND ADRESSES .wav files
+// SOUND ADRESSES .wav files
 const char hit1[] = "assets/sounds/hit1.wav";
 const char hit2[] = "assets/sounds/hit2.wav";
 const char voice1[] = "assets/sounds/voice1.wav";
@@ -286,42 +285,59 @@ const char voice2[] = "assets/sounds/voice2.wav";
 const char brocolli[] = "assets/sounds/Kendrick Lamar  Broccoli Snippet Edit.mp3";
 const char playtrack[] = "assets/play/music/playtrack.mp3";
 
-//SOUND ASSETS
-Mix_Music* track = nullptr;
-Mix_Music* broccolli = nullptr;
-Mix_Chunk* hits1 = nullptr;
-Mix_Chunk* hits2 = nullptr;
-Mix_Chunk* voices1 = nullptr;
-Mix_Chunk* voices2 = nullptr;
+// SOUND ASSETS
+Mix_Music *track = nullptr;
+Mix_Music *broccolli = nullptr;
+Mix_Chunk *hits1 = nullptr;
+Mix_Chunk *hits2 = nullptr;
+Mix_Chunk *voices1 = nullptr;
+Mix_Chunk *voices2 = nullptr;
 
-//CHARACTER+HEALTH CONTROL BOXES
+// CHARACTER+HEALTH CONTROL BOXES
 SDL_Rect kendrick{100, 330, 100, 128};
-SDL_Rect kendrick_health{100, 310, 100, 20};
+SDL_Rect kendrick_health{20, 10, 270, 15};
 SDL_Rect drake{400, 330, 100, 128};
-SDL_Rect drake_health{400, 310, 100, 20};
+SDL_Rect drake_health{330, 50, 270, 15};
 
-//UTILITY FEATURES
-enum class impact{KENDRICK, DRAKE, NONE};
-enum class hits{KENDRICK, DRAKE, NONE};
+// UTILITY FEATURES
+enum class impact
+{
+    KENDRICK,
+    DRAKE,
+    NONE
+};
+enum class hits
+{
+    KENDRICK,
+    DRAKE,
+    NONE
+};
 impact striked = impact::NONE;
 hits agressor = hits::NONE;
-enum last_button{S, DOWN, NONE};
+enum last_button
+{
+    S,
+    DOWN,
+    NONE
+};
 int entry = NONE;
 void clear_screen();
 void health_regulator();
-auto collision = [](){return SDL_HasIntersection(&kendrick, &drake);};
+auto collision = []()
+{ return SDL_HasIntersection(&kendrick, &drake); };
 SDL_Rect like_us_bar{200, 200, 240, 80};
 SDL_Rect k_head{50, 100, 500, 330};
 SDL_Rect msg{30, 30, 280, 80};
 bool quit = false; // for game loop
 
-//RUN ON BEGIN + END 
+// RUN ON BEGIN + END
 void begin();
 void end();
 
-int main(int arg, char* args[]){
+int main(int arg, char *args[])
+{
 
-    //BASIC INITIALIZATION to handle other image formats like JPG(example) use IMG_INIT_PNG | IMG_INIT_JPG
+    // BASIC INITIALIZATION to handle other image formats like JPG(example) use IMG_INIT_PNG | IMG_INIT_JPG
     SDL_Init(SDL_INIT_EVERYTHING);
     IMG_Init(IMG_INIT_PNG);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
@@ -330,142 +346,180 @@ int main(int arg, char* args[]){
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     // SET ICON FOR OUR GAME
-    SDL_Surface* icon_surface = IMG_Load(icon);
+    SDL_Surface *icon_surface = IMG_Load(icon);
     SDL_SetWindowIcon(window, icon_surface);
 
     load_assets();
     begin();
 
-    //EVENT HANDLING
+    // EVENT HANDLING
     Uint32 start_time = SDL_GetTicks();
-    static int kendrick_jumps = 0; //TO RESOLVE >2 JUMPS (NOT POSSIBLE)
+    static int kendrick_jumps = 0; // TO RESOLVE >2 JUMPS (NOT POSSIBLE)
     static int drake_jumps = 0;
-    Uint32 kendrick_t0, drake_t0; //TO KEEP TRACK OF LANDING TIME
-    Uint32 agressor_time; //TO KEEP TRACK OF HIT TIME
+    Uint32 kendrick_t0, drake_t0; // TO KEEP TRACK OF LANDING TIME
+    Uint32 agressor_time;         // TO KEEP TRACK OF HIT TIME
     SDL_Event event;
 
-
-    while(!quit){
-        while(SDL_PollEvent(&event)){
-            if(event.type == SDL_QUIT)
+    while (!quit)
+    {
+        while (SDL_PollEvent(&event))
+        {
+            if (event.type == SDL_QUIT)
                 quit = true;
-            if(event.type == SDL_KEYDOWN){
-                switch(event.key.keysym.sym){
-                    //KENDRICK CASES
-                    case SDLK_d:
-                        kendrick.x += 20; kendrick_health.x += 20; striked = impact::DRAKE;
-                        break;
-                    case SDLK_a:
-                        kendrick.x -= 20; kendrick_health.x -= 20; striked = impact::DRAKE;
-                        break;
-                    case SDLK_w:
-                        if(kendrick_jumps < 2){
-                            kendrick.y -= 65; kendrick_health.y -= 65; ++kendrick_jumps;
-                            kendrick_t0 = SDL_GetTicks();
-                        }
-                        break;
-                    case SDLK_s:
-                        agressor = hits::KENDRICK; agressor_time = SDL_GetTicks(); entry = S; Mix_PlayChannel(-1, voices1, 0); break;
+            if (event.type == SDL_KEYDOWN)
+            {
+                switch (event.key.keysym.sym)
+                {
+                // KENDRICK CASES
+                case SDLK_d:
+                    kendrick.x += 20;
+                    striked = impact::DRAKE;
+                    break;
+                case SDLK_a:
+                    kendrick.x -= 20;
+                    striked = impact::DRAKE;
+                    break;
+                case SDLK_w:
+                    if (kendrick_jumps < 2)
+                    {
+                        kendrick.y -= 65;
+                        ++kendrick_jumps;
+                        kendrick_t0 = SDL_GetTicks();
+                    }
+                    break;
+                case SDLK_s:
+                    agressor = hits::KENDRICK;
+                    agressor_time = SDL_GetTicks();
+                    entry = S;
+                    Mix_PlayChannel(-1, voices1, 0);
+                    break;
 
-                    //DRAKE CASES
-                    case SDLK_RIGHT:
-                        drake.x += 20; drake_health.x += 20; striked = impact::KENDRICK;
-                        break;
-                    case SDLK_LEFT:
-                        drake.x -= 20; drake_health.x -= 20; striked = impact::KENDRICK;
-                        break;
-                    case SDLK_UP:
-                        if(drake_jumps < 2){
-                            drake.y -= 65; drake_health.y -= 65; ++drake_jumps;
-                            drake_t0 = SDL_GetTicks();
-                        }
-                        break;
-                    case SDLK_DOWN:
-                        agressor = hits::DRAKE; agressor_time = SDL_GetTicks(); entry = DOWN; Mix_PlayChannel(-1, hits1, 0); break;
+                // DRAKE CASES
+                case SDLK_RIGHT:
+                    drake.x += 20;
+                    striked = impact::KENDRICK;
+                    break;
+                case SDLK_LEFT:
+                    drake.x -= 20;
+                    striked = impact::KENDRICK;
+                    break;
+                case SDLK_UP:
+                    if (drake_jumps < 2)
+                    {
+                        drake.y -= 65;
+                        ++drake_jumps;
+                        drake_t0 = SDL_GetTicks();
+                    }
+                    break;
+                case SDLK_DOWN:
+                    agressor = hits::DRAKE;
+                    agressor_time = SDL_GetTicks();
+                    entry = DOWN;
+                    Mix_PlayChannel(-1, hits1, 0);
+                    break;
                 }
             }
         }
-        
+
         Uint32 current_time = SDL_GetTicks();
 
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, background, nullptr, nullptr);
 
-        //JUMPING
-        if (current_time - kendrick_t0 > 175 && kendrick_jumps > 0) {
+        // JUMPING
+        if (current_time - kendrick_t0 > 175 && kendrick_jumps > 0)
+        {
             kendrick.y = 330;
-            kendrick_health.y = 310;
             kendrick_jumps = 0;
         }
-        if (current_time - drake_t0 > 175 && drake_jumps > 0) {
+        if (current_time - drake_t0 > 175 && drake_jumps > 0)
+        {
             drake.y = 330;
-            drake_health.y = 310;
             drake_jumps = 0;
         }
 
         // BREATHE EFFECT
-        if ((current_time - start_time) % (2 * frame_delay) < frame_delay) {
+        if ((current_time - start_time) % (2 * frame_delay) < frame_delay)
+        {
             SDL_RenderCopy(renderer, drake_1, nullptr, &drake);
             SDL_RenderCopy(renderer, kendrick_1, nullptr, &kendrick);
-        } else {
-            if(current_time - agressor_time < 500){
-                if(agressor == hits::KENDRICK){
+        }
+        else
+        {
+            if (current_time - agressor_time < 500)
+            {
+                if (agressor == hits::KENDRICK)
+                {
                     SDL_RenderCopy(renderer, kendrick_hit, nullptr, &kendrick);
                     SDL_RenderCopy(renderer, drake_2, nullptr, &drake);
                 }
-                if(agressor == hits::DRAKE){
+                if (agressor == hits::DRAKE)
+                {
                     SDL_RenderCopy(renderer, drake_hit, nullptr, &drake);
                     SDL_RenderCopy(renderer, kendrick_2, nullptr, &kendrick);
                 }
             }
-            else{
+            else
+            {
                 agressor = hits::NONE;
                 SDL_RenderCopy(renderer, kendrick_2, nullptr, &kendrick);
                 SDL_RenderCopy(renderer, drake_2, nullptr, &drake);
             }
-            
         }
 
-        //HEALTH BAR
+        checkEnds(&kendrick.x);
+        checkEnds(&drake.x);
+        // HEALTH BAR
         health_regulator();
-        SDL_SetRenderDrawColor(renderer, 200, 0, 2, 255);
+        SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
         SDL_RenderFillRect(renderer, &kendrick_health);
 
         SDL_SetRenderDrawColor(renderer, 2, 0, 225, 255);
         SDL_RenderFillRect(renderer, &drake_health);
 
-        
         SDL_RenderPresent(renderer);
-        if(kendrick_health.w == 0 or drake_health.w == 0) quit = true;
+        if (kendrick_health.w == 0 or drake_health.w == 0)
+            quit = true;
     }
-        end();
-        clear_screen();
-        std::exit(0);
-        return 0;
+    end();
+    clear_screen();
+    std::exit(0);
+    return 0;
 }
 
-void health_regulator(){
+void health_regulator()
+{
     bool collide = collision();
-    if(collide){
-        if(striked == impact::DRAKE){
-            if(agressor == hits::KENDRICK){
-                drake_health.w -= 10;
+    if (collide)
+    {
+        if (striked == impact::DRAKE)
+        {
+            if (agressor == hits::KENDRICK)
+            {
+                drake_health.w -= 18;
+                drake.x += 20;
             }
         }
-        
-        if(striked == impact::KENDRICK){
-            if(agressor == hits::DRAKE){
-                kendrick_health.w -= 5;
+
+        if (striked == impact::KENDRICK)
+        {
+            if (agressor == hits::DRAKE)
+            {
+                kendrick_health.w -= 10;
+                kendrick.x -= 20;
             }
         }
     }
-    if(kendrick_health.w < 0) kendrick_health.w = 0;
-    if(drake_health.w < 0) drake_health.w = 0;
+    if (kendrick_health.w < 0)
+        kendrick_health.w = 0;
+    if (drake_health.w < 0)
+        drake_health.w = 0;
     striked = impact::NONE;
-    //agressor = hits::NONE;
+    // agressor = hits::NONE;
 }
 
-void load_assets(){
+void load_assets()
+{
     drake_1 = IMG_LoadTexture(renderer, drake1);
     drake_2 = IMG_LoadTexture(renderer, drake2);
     kendrick_1 = IMG_LoadTexture(renderer, kendrick1);
@@ -492,7 +546,6 @@ void load_assets(){
     piano1 = IMG_LoadTexture(renderer, kendrick_piano);
     piano2 = IMG_LoadTexture(renderer, kendrick_piano_2);
     war_ = IMG_LoadTexture(renderer, war);
-
 
     broccolli = Mix_LoadMUS(brocolli);
     track = Mix_LoadMUS(playtrack);
@@ -576,21 +629,19 @@ void load_assets(){
     kdd66 = IMG_LoadTexture(renderer, kd66);
     kdd67 = IMG_LoadTexture(renderer, kd67);
 
-    
     // CHECK FOR PROPER INITIALIZATION
-    if(!(broccolli or track or hits1 or hits2 or voices1 or voices2 or blank_screen or kendrick__logo or piano1 or piano2
-        or load or like_us or clock0 or clock1 or clock2 or owl0 or owl1 or owl2 or owl3 or owl4 or owl5 
-        or war_))
-            std::cerr << "Error initializing starting assets";
+    if (!(broccolli or track or hits1 or hits2 or voices1 or voices2 or blank_screen or kendrick__logo or piano1 or piano2 or load or like_us or clock0 or clock1 or clock2 or owl0 or owl1 or owl2 or owl3 or owl4 or owl5 or war_))
+        std::cerr << "Error initializing starting assets";
 
-    if(!(drake_1 or drake_2 or kendrick_1 or kendrick_2 or kendrick_hit or drake_hit or background or empty or msg_))
+    if (!(drake_1 or drake_2 or kendrick_1 or kendrick_2 or kendrick_hit or drake_hit or background or empty or msg_))
         std::cerr << "Error initializing runtime assets";
 
     return;
 }
 
-void begin(){
-    
+void begin()
+{
+
     SDL_RenderClear(renderer);
     Mix_PlayMusic(track, 0);
 
@@ -612,7 +663,7 @@ void begin(){
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, blank_screen, nullptr, nullptr);
     SDL_RenderPresent(renderer);
-    
+
     SDL_Delay(1000);
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, clock2, nullptr, nullptr);
@@ -650,7 +701,7 @@ void begin(){
     SDL_RenderCopy(renderer, war_, nullptr, nullptr);
     SDL_RenderPresent(renderer);
 
-    SDL_Delay(1700+2600);
+    SDL_Delay(1700 + 2600);
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, owl0, nullptr, &k_head);
     SDL_RenderPresent(renderer);
@@ -674,23 +725,22 @@ void begin(){
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, owl5, nullptr, &k_head);
     SDL_RenderPresent(renderer);
-    
+
     SDL_Delay(400);
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, background, nullptr, nullptr);
     SDL_RenderPresent(renderer);
     SDL_Delay(500);
-    //SDL_RenderClear(renderer);
+    // SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, msg_, nullptr, &msg);
     SDL_RenderPresent(renderer);
 
     SDL_Delay(3000);
     return;
-
 }
 
-
-void clear_screen() {
+void clear_screen()
+{
     SDL_DestroyTexture(drake_1);
     SDL_DestroyTexture(drake_2);
     SDL_DestroyTexture(kendrick_1);
@@ -801,13 +851,15 @@ void clear_screen() {
     Mix_CloseAudio();
     IMG_Quit();
     SDL_Quit();
-    //exit(0);
+    // exit(0);
 
     return;
 }
 
-void end() {
-    if(drake_health.w == 0){
+void end()
+{
+    if (drake_health.w == 0)
+    {
 
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, blank_screen, nullptr, nullptr);
@@ -1163,8 +1215,9 @@ void end() {
         // clear_screen();
         // return;
         abort();
-
-    } else if(kendrick_health.w == 0){
+    }
+    else if (kendrick_health.w == 0)
+    {
 
         Mix_FreeChunk(hits1);
         Mix_FreeChunk(hits2);
@@ -1201,7 +1254,8 @@ void end() {
         SDL_RenderPresent(renderer);
         SDL_Delay(800);
 
-        for(auto i = 0; i < 20; i++){
+        for (auto i = 0; i < 20; i++)
+        {
             SDL_RenderClear(renderer);
             SDL_RenderCopy(renderer, dot_final, nullptr, nullptr);
             SDL_RenderPresent(renderer);
@@ -1218,10 +1272,19 @@ void end() {
         // clear_screen();
         // return;
         abort();
-        
     }
 
     // return;
-    
 }
 
+void checkEnds(int *coordinate)
+{
+    if (*coordinate < 20)
+    {
+        *coordinate = -13;
+    }
+    else if (*coordinate >= 545)
+    {
+        *coordinate = 555;
+    }
+}
