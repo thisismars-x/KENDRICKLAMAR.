@@ -72,9 +72,12 @@ const char kendrick2[] = "assets/kendrick/breatheRight.png";
 const char background0[] = "assets/images/red-background.png";
 const char kendrickhit[] = "assets/kendrick/kendrick_hit.png";
 const char drakehit[] = "assets/drake/drake_hit.png";
+const char drakeicon[] = "assets/drake/drake_icon.png";
 const char blank[] = "assets/images/empty.png";
 const char icon[] = "assets/images/icon.png";
 const char message[] = "assets/entry/images/message.png";
+const char draketext[] = "assets/drake/drake_text.png";
+const char kendricktext[] = "assets/drake/kendrick_text.png";
 
 // START PROGRAM ASSETS
 const char blankscreen[] = "assets/entry/images/blank-screen.png";
@@ -245,6 +248,10 @@ SDL_Texture *kdd64 = nullptr;
 SDL_Texture *kdd65 = nullptr;
 SDL_Texture *kdd66 = nullptr;
 SDL_Texture *kdd67 = nullptr;
+SDL_Texture *kendrick_icon = nullptr;
+SDL_Texture *drake_icon = nullptr;
+SDL_Texture *drake_text = nullptr;
+SDL_Texture *kendrick_text = nullptr;
 
 // START PROGRAM ADRESSES
 SDL_Texture *blank_screen = nullptr;
@@ -297,7 +304,11 @@ Mix_Chunk *voices2 = nullptr;
 SDL_Rect kendrick{100, 330, 100, 128};
 SDL_Rect kendrick_health{20, 10, 270, 15};
 SDL_Rect drake{400, 330, 100, 128};
-SDL_Rect drake_health{330, 50, 270, 15};
+SDL_Rect drake_health{330, 60, 270, 15};
+SDL_Rect kendrick_head{10, 25, 64, 64};
+SDL_Rect drake_head{540, -3, 100, 64};
+SDL_Rect kendrick_tex{60, 14, 240, 80};
+SDL_Rect drake_tex{345, 1, 240, 80};
 
 // UTILITY FEATURES
 enum class impact
@@ -350,7 +361,7 @@ int main(int arg, char *args[])
     SDL_SetWindowIcon(window, icon_surface);
 
     load_assets();
-    begin();
+    // begin();
 
     // EVENT HANDLING
     Uint32 start_time = SDL_GetTicks();
@@ -437,7 +448,10 @@ int main(int arg, char *args[])
             drake.y = 330;
             drake_jumps = 0;
         }
-
+        SDL_RenderCopy(renderer, kendrick_icon, nullptr, &kendrick_head);
+        SDL_RenderCopy(renderer, drake_icon, nullptr, &drake_head);
+        SDL_RenderCopy(renderer, drake_text, nullptr, &drake_tex);
+        SDL_RenderCopy(renderer, kendrick_text, nullptr, &kendrick_tex);
         // BREATHE EFFECT
         if ((current_time - start_time) % (2 * frame_delay) < frame_delay)
         {
@@ -529,6 +543,10 @@ void load_assets()
     background = IMG_LoadTexture(renderer, background0);
     empty = IMG_LoadTexture(renderer, blank);
     msg_ = IMG_LoadTexture(renderer, message);
+    kendrick_icon = IMG_LoadTexture(renderer, icon);
+    drake_icon = IMG_LoadTexture(renderer, drakeicon);
+    drake_text = IMG_LoadTexture(renderer, draketext);
+    kendrick_text = IMG_LoadTexture(renderer, kendricktext);
 
     blank_screen = IMG_LoadTexture(renderer, blankscreen);
     kendrick__logo = IMG_LoadTexture(renderer, kendrick_logo);
@@ -1279,7 +1297,7 @@ void end()
 
 void checkEnds(int *coordinate)
 {
-    if (*coordinate < 20)
+    if (*coordinate < 0)
     {
         *coordinate = -13;
     }
